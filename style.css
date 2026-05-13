@@ -1,0 +1,214 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+    overflow:hidden;
+}
+
+.hero{
+    width:100%;
+    height:100vh;
+    display:flex;
+}
+
+/* LEFT SIDE */
+.left{
+    width:50%;
+    background:#f7c500;
+    position:relative;
+    padding:40px 70px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.logo{
+    position:absolute;
+    top:30px;
+    left:50px;
+    font-size:40px;
+    font-weight:900;
+    color:#2b5daa;
+    -webkit-text-stroke:2px #ffde00;
+    transform:rotate(-8deg);
+}
+
+.tag{
+    letter-spacing:5px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+    color:#111;
+}
+
+h1{
+    font-size:110px;
+    line-height:1;
+    color:#111;
+    margin-bottom:25px;
+}
+
+p{
+    width:360px;
+    line-height:1.8;
+    color:#222;
+    font-size:15px;
+}
+
+.bottom{
+    margin-top:40px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-weight:bold;
+}
+
+.line{
+    width:50px;
+    height:2px;
+    background:#111;
+}
+
+/* RIGHT SIDE */
+.right{
+    width:50%;
+    background:#f7eed7;
+    position:relative;
+    overflow:hidden;
+}
+
+.menu{
+    position:absolute;
+    top:35px;
+    right:40px;
+    width:30px;
+    cursor:pointer;
+    z-index:10;
+}
+
+.menu span{
+    display:block;
+    height:3px;
+    background:#222;
+    margin:6px 0;
+    border-radius:5px;
+}
+
+/* PIKACHU */
+.pikachu{
+    position:absolute;
+
+    right:-180px;   /* bahar */
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:900px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.pikachu img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(-50%) translateX(0px);
+    }
+
+    50%{
+        transform:translateY(-52%) translateX(-10px);
+    }
+
+    100%{
+        transform:translateY(-50%) translateX(0px);
+    }
+}
+
+/* side dots */
+.dots{
+    position:absolute;
+    right:25px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.dots span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#f4c000;
+}
+
+/* pokeball */
+.pokeball{
+    position:absolute;
+    left:40px;
+    bottom:40px;
+    width:140px;
+    height:140px;
+    border:12px solid rgba(0,0,0,0.08);
+    border-radius:50%;
+}
+
+.pokeball::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:12px;
+    background:rgba(0,0,0,0.08);
+    transform:translateY(-50%);
+}
+
+.pokeball::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:10px solid rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+    }
+
+    .left,
+    .right{
+        width:100%;
+        height:50vh;
+    }
+
+    h1{
+        font-size:70px;
+    }
+
+    p{
+        width:100%;
+    }
+
+    .pikachu{
+        width:500px;
+        right:-100px;
+        top:55%;
+    }
+}
